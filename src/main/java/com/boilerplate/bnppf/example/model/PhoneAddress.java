@@ -24,14 +24,14 @@ public class PhoneAddress {
 
     @NotNull
     @Enumerated(EnumType.STRING)
-    @Column(name = "phoneType")
+    @Column(name = "phoneType", nullable = false)
     private NumberType phoneType;
 
     /* A regex is used to validate a string format, it's useful for phones, bank accounts, emails etc.
      * To find existing regexes, build your own and test it, use this website → https://regex101.com/
      */
     @NotNull
-    @Column(name = "phoneNumber")
+    @Column(name = "phoneNumber", nullable = false)
     @Pattern(regexp = "^(((\\+|00)32' '?(?:\\(0\\)' '?)?)|0)(4(60|[789]\\d)/?(\\s?\\d{2}\\.?){2}(\\s?\\d{2})|(\\d/?\\s?\\d{3}|\\d{2}/?\\s?\\d{2})(\\.?\\s?\\d{2}){2})$", message = "Invalid belgian phone number format")
     private String phoneNumber;
 }

@@ -1,5 +1,6 @@
 package com.boilerplate.bnppf.example.repositories;
 
+import com.boilerplate.bnppf.example.enums.MaritalStatus;
 import com.boilerplate.bnppf.example.model.Demand;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -36,6 +37,6 @@ public interface DemandRepository extends JpaRepository<Demand, UUID> {
     @Override
     Page<Demand> findAll(Pageable pageable);
 
-    /* Query method example - finds all the demands for a product */
-    List<Demand> findAllByProductId(String productId);
+    /* Query method example - finds all entries with a given marital status */
+    List<Demand> findAllByMaritalStatus(MaritalStatus maritalStatus);
 }

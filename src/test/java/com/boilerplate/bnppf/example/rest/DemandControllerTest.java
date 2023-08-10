@@ -1,9 +1,7 @@
 package com.boilerplate.bnppf.example.rest;
 
 import com.boilerplate.bnppf.example.enums.CivilStatus;
-import com.boilerplate.bnppf.example.enums.MaritalStatus;
 import com.boilerplate.bnppf.example.enums.NumberType;
-import com.boilerplate.bnppf.example.model.Demand;
 import com.boilerplate.bnppf.example.model.DemandDetails;
 import com.boilerplate.bnppf.example.model.PhoneAddress;
 import com.boilerplate.bnppf.example.service.DemandService;
@@ -17,8 +15,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.List;
 import java.util.UUID;
 
 import static org.mockito.Mockito.when;
@@ -47,15 +43,17 @@ class DemandControllerTest {
     @Test
     void whenSaveDemand_givenValidDemand_thenShouldBeSuccess() throws Exception {
         DemandDetails demandDetails = DemandDetails.builder()
-                .firstname("Marcus")
-                .lastname("Shire")
-                .birthdate(LocalDate.of(1989, 5, 15))
-                .civilStatus(CivilStatus.WIDOW)
+                .psp("2658")
+                .smid("0123456789")
+                .firstname("Louis")
+                .lastname("Marcovic")
+                .birthdate(LocalDate.of(2000, 12, 30))
+                .civilStatus(CivilStatus.SINGLE)
                 .phoneAddress(PhoneAddress.builder()
                         .phoneType(NumberType.MOBILE)
                         .phoneNumber("+32470123045")
                         .build())
-                .productId("DIRECT_RESERVE")
+                .domiciledIncome(true)
                 .build();
 
         UUID uuid = UUID.fromString("de1bf279-97f6-43de-9325-f31b99fb9199");

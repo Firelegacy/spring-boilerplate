@@ -6,6 +6,7 @@ import jakarta.persistence.Embedded;
 import jakarta.validation.constraints.*;
 import lombok.Builder;
 import lombok.Data;
+import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDate;
 
@@ -13,15 +14,21 @@ import java.time.LocalDate;
 @Builder
 @Data
 public class DemandDetails {
+
     @NotBlank
-    private String productId;
+    @Size(min = 1, max = 8)
+    private String psp;
+
+    @NotBlank
+    @Length(min = 10, max = 10)
+    private String smid;
 
     @NotNull
-    @Size(min = 2)
+    @Size(min = 2, max = 50)
     private String firstname;
 
     @NotNull
-    @Size(min = 2)
+    @Size(min = 2, max = 50)
     private String lastname;
 
     @NotNull
@@ -43,6 +50,9 @@ public class DemandDetails {
     @NotNull
     @Embedded
     private PhoneAddress phoneAddress;
+
+    @NotNull
+    private boolean domiciledIncome;
 
     @AssertTrue
     private boolean isAcceptedMaritalStatus() {

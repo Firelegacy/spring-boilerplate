@@ -1,5 +1,6 @@
 package com.boilerplate.bnppf.example.service;
 
+import com.boilerplate.bnppf.example.enums.MaritalStatus;
 import com.boilerplate.bnppf.example.exception.DemandNotFoundException;
 import com.boilerplate.bnppf.example.model.Demand;
 import com.boilerplate.bnppf.example.model.DemandDetails;
@@ -41,8 +42,8 @@ public class DemandService {
         return this.demandRepository.findAll(pageable);
     }
 
-    public List<Demand> findAllDemandsForAProduct(String productId) {
-        return this.demandRepository.findAllByProductId(productId);
+    public List<Demand> findAllDemandsByMaritalStatus(MaritalStatus maritalStatus) {
+        return this.demandRepository.findAllByMaritalStatus(maritalStatus);
     }
 
     public UUID saveNewDemand(DemandDetails demandDetails) {

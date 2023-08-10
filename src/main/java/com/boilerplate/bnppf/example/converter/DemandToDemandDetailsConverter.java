@@ -8,13 +8,15 @@ public class DemandToDemandDetailsConverter implements Converter<Demand, DemandD
     @Override
     public DemandDetails convert(Demand demand) {
         return DemandDetails.builder()
+                .psp(demand.getPsp())
+                .smid(demand.getSmid())
                 .firstname(demand.getFirstname())
                 .lastname(demand.getLastname())
                 .birthdate(demand.getBirthdate())
                 .civilStatus(demand.getCivilStatus())
                 .maritalStatus(demand.getMaritalStatus())
                 .phoneAddress(demand.getPhoneAddress())
-                .productId(demand.getProductId())
+                .domiciledIncome(demand.isDomiciledIncome())
                 .build();
     }
 }
