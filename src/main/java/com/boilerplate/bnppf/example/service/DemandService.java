@@ -5,18 +5,23 @@ import com.boilerplate.bnppf.example.model.Demand;
 import com.boilerplate.bnppf.example.model.DemandDetails;
 import com.boilerplate.bnppf.example.repositories.DemandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.convert.ConversionService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.security.InvalidParameterException;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 @Service
 public class DemandService {
+
+    @Autowired
+    ConversionService conversionService;
 
     @Autowired
     private DemandRepository demandRepository;
@@ -41,8 +46,13 @@ public class DemandService {
     }
 
     public UUID saveNewDemand(DemandDetails demandDetails){
-        Demand demand = new Demand();
-        Demand savedDemand = this.demandRepository.save(demand);
-        return savedDemand.getId();
+        if(demandDetails == null) throw new InvalidParameterException("demandDetails should not be empty");
+        Demand demand = conversionService.convert(demandDetails, Demand.class);
+        if(demand == null) throw new InvalidParameterException("Conversion to Demand went wrong");
+        /* TODO add this instead when db is ready
+        * Demand savedDemand = this.demandRepository.save(demand);
+         */
+        demand.setId(UUID.randomUUID());
+        return demand.getId();
     }
 }
