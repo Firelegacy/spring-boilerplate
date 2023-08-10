@@ -45,14 +45,12 @@ public class DemandService {
         return this.demandRepository.findAllByProductId(productId);
     }
 
-    public UUID saveNewDemand(DemandDetails demandDetails){
-        if(demandDetails == null) throw new InvalidParameterException("demandDetails should not be empty");
+    public UUID saveNewDemand(DemandDetails demandDetails) {
+        if (demandDetails == null) throw new InvalidParameterException("demandDetails should not be empty");
         Demand demand = conversionService.convert(demandDetails, Demand.class);
-        if(demand == null) throw new InvalidParameterException("Conversion to Demand went wrong");
-        /* TODO add this instead when db is ready
-        * Demand savedDemand = this.demandRepository.save(demand);
-         */
-        demand.setId(UUID.randomUUID());
-        return demand.getId();
+        if (demand == null) throw new InvalidParameterException("Conversion to Demand went wrong");
+
+        Demand savedDemand = this.demandRepository.save(demand);
+        return savedDemand.getId();
     }
 }

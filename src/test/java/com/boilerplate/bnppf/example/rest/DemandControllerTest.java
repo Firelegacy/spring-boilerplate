@@ -52,8 +52,8 @@ class DemandControllerTest {
                 .birthdate(LocalDate.of(1989, 5, 15))
                 .civilStatus(CivilStatus.WIDOW)
                 .phoneAddress(PhoneAddress.builder()
-                        .type(NumberType.MOBILE)
-                        .number("+32470123045")
+                        .phoneType(NumberType.MOBILE)
+                        .phoneNumber("+32470123045")
                         .build())
                 .productId("DIRECT_RESERVE")
                 .build();

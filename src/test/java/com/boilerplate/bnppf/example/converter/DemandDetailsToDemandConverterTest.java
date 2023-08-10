@@ -35,8 +35,8 @@ class DemandDetailsToDemandConverterTest {
                 .birthdate(LocalDate.of(2000, 12, 30))
                 .civilStatus(CivilStatus.SINGLE)
                 .phoneAddress(PhoneAddress.builder()
-                        .type(NumberType.MOBILE)
-                        .number("+32470123045")
+                        .phoneType(NumberType.MOBILE)
+                        .phoneNumber("+32470123045")
                         .build())
                 .productId("DIRECT_RESERVE")
                 .build();
@@ -47,8 +47,8 @@ class DemandDetailsToDemandConverterTest {
                 .birthdate(LocalDate.of(2000, 12, 30))
                 .civilStatus(CivilStatus.SINGLE)
                 .phoneAddress(PhoneAddress.builder()
-                        .type(NumberType.MOBILE)
-                        .number("+32470123045")
+                        .phoneType(NumberType.MOBILE)
+                        .phoneNumber("+32470123045")
                         .build())
                 .productId("DIRECT_RESERVE")
                 .build();
@@ -66,8 +66,8 @@ class DemandDetailsToDemandConverterTest {
                 .birthdate(LocalDate.of(2000, 12, 30))
                 .civilStatus(CivilStatus.SINGLE)
                 .phoneAddress(PhoneAddress.builder()
-                        .type(NumberType.MOBILE)
-                        .number("+32470123045")
+                        .phoneType(NumberType.MOBILE)
+                        .phoneNumber("+32470123045")
                         .build())
                 .productId("DIRECT_RESERVE")
                 .build();
@@ -79,8 +79,8 @@ class DemandDetailsToDemandConverterTest {
                 .birthdate(LocalDate.of(2000, 12, 30))
                 .civilStatus(CivilStatus.SINGLE)
                 .phoneAddress(PhoneAddress.builder()
-                        .type(NumberType.MOBILE)
-                        .number("+32470123045")
+                        .phoneType(NumberType.MOBILE)
+                        .phoneNumber("+32470123045")
                         .build())
                 .productId("DIRECT_RESERVE")
                 .build();
