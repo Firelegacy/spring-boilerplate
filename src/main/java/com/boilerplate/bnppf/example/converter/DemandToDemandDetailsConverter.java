@@ -13,6 +13,7 @@ public class DemandToDemandDetailsConverter implements Converter<Demand, DemandD
                 .birthdate(demand.getBirthdate())
                 .civilStatus(demand.getCivilStatus())
                 .maritalStatus(demand.getMaritalStatus())
+                .phoneAddress(demand.getPhoneAddress())
                 .productId(demand.getProductId())
                 .build();
     }

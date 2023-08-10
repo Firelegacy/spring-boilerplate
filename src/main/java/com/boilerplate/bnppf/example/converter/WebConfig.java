@@ -9,6 +9,8 @@ public class WebConfig implements WebMvcConfigurer {
 
     /* Makes these converters available through the Spring object ConversionService (autowired)
     * use like in this example: Demand demand = conversionService.convert(demandDetails, Demand.class);
+    *
+    * More info: https://www.baeldung.com/spring-type-conversions
     * */
     @Override
     public void addFormatters(FormatterRegistry registry) {

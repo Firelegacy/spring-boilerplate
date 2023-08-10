@@ -2,6 +2,7 @@ package com.boilerplate.bnppf.example.model;
 
 import com.boilerplate.bnppf.example.enums.CivilStatus;
 import com.boilerplate.bnppf.example.enums.MaritalStatus;
+import jakarta.persistence.Embedded;
 import jakarta.validation.constraints.*;
 import lombok.Builder;
 import lombok.Data;
@@ -15,9 +16,11 @@ public class DemandDetails {
     @NotBlank
     private String productId;
 
+    @NotNull
     @Size(min = 2)
     private String firstname;
 
+    @NotNull
     @Size(min = 2)
     private String lastname;
 
@@ -29,6 +32,17 @@ public class DemandDetails {
     private CivilStatus civilStatus;
 
     private MaritalStatus maritalStatus;
+
+    /* @Embedded is used with @Embeddable in the child class, it is used to declare a sub-object structurally (json structure)
+     *
+     * Note that the embedded properties will have the parent property name as a prefix like such: phone_address_number,
+     * if you wish to remove it, you should add this annotation: @AttributeOverrides({ @AttributeOverride( name = "phoneNumber", column = @Column(name = "phone_address_number")) })
+     *
+     * More info: https://www.baeldung.com/jpa-embedded-embeddable
+     * */
+    @NotNull
+    @Embedded
+    private PhoneAddress phoneAddress;
 
     @AssertTrue
     private boolean isAcceptedMaritalStatus() {

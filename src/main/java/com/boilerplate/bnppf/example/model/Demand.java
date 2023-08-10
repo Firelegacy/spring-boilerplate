@@ -37,4 +37,7 @@ public class Demand {
 
     @Enumerated(EnumType.STRING)
     private MaritalStatus maritalStatus;
+
+    @Embedded
+    private PhoneAddress phoneAddress;
 }

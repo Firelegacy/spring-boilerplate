@@ -14,7 +14,7 @@ public class DemandDetailsToDemandConverter implements Converter<DemandDetails, 
                 .civilStatus(demandDetails.getCivilStatus())
                 .maritalStatus(demandDetails.getMaritalStatus())
                 .productId(demandDetails.getProductId())
+                .phoneAddress(demandDetails.getPhoneAddress())
                 .build();
     }
-
 }
