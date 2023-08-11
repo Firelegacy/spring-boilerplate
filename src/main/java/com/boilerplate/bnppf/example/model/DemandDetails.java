@@ -55,8 +55,8 @@ public class DemandDetails {
     private boolean domiciledIncome;
 
     @AssertTrue
-    private boolean isAcceptedMaritalStatus() {
-        if (civilStatus.equals(CivilStatus.MARRIED)) {
+    public boolean isAcceptedMaritalStatus() {
+        if (civilStatus!= null && civilStatus.equals(CivilStatus.MARRIED)) {
             return !maritalStatus.equals(MaritalStatus.SEPERATED_ESTATE) && !maritalStatus.equals(MaritalStatus.UNIVERSAL_COMMUNITY);
         } else {
             return true;

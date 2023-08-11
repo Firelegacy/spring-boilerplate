@@ -5,6 +5,7 @@ import com.boilerplate.bnppf.example.enums.MaritalStatus;
 import com.boilerplate.bnppf.example.model.Demand;
 import com.boilerplate.bnppf.example.model.DemandDetails;
 import com.boilerplate.bnppf.example.service.DemandService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -29,7 +30,7 @@ public class DemandController {
     private DemandService demandService;
 
     @PostMapping(path = "/demands", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> saveDemand(@RequestBody DemandDetails demandDetails) {
+    public ResponseEntity<?> saveDemand(@Valid @RequestBody DemandDetails demandDetails) {
         UUID demandId = this.demandService.saveNewDemand(demandDetails);
         Map<String, Object> map = new LinkedHashMap<>();
         map.put("demandId", demandId);
@@ -45,8 +46,7 @@ public class DemandController {
     @GetMapping(path = "/demands", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Page<Demand>> getAllDemands(
             @PageableDefault(page = 0, size = 5)
-            @SortDefault.SortDefaults({@SortDefault(sort = "psp", direction = Sort.Direction.DESC),})
-            Pageable pageable,
+            @SortDefault.SortDefaults({@SortDefault(sort = "psp", direction = Sort.Direction.ASC)}) Pageable pageable,
             @RequestParam(name = "maritalStatus", required = false) MaritalStatus maritalStatus,
             @RequestParam(name = "civilStatus", required = false) CivilStatus civilStatus) {
 
