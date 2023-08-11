@@ -12,3 +12,6 @@ VALUES ('dfdd5c8b-7a21-49f6-8f07-0fe50520f9ea', '60', '0918273645', 'Emily', 'Br
 
 INSERT INTO "demands" ("id", "psp", "smid", "firstname", "lastname", "birthdate", "civil_status", "marital_status", "phone_type", "phone_number", "domiciled_income")
 VALUES ('af89d37d-e8d1-46db-8b08-6e3c34532ac5', '8', '9876543210', 'David', 'Williams', '1980-11-03', 'WIDOW', null , 'FIX', '+32012345678', true);
+
+INSERT INTO "demands" ("id", "psp", "smid", "firstname", "lastname", "birthdate", "civil_status", "marital_status", "phone_type", "phone_number", "domiciled_income")
+VALUES ('af89d37d-e8d1-46db-8b08-6e3c34532a89', '78812', '7881200000', 'Sasha', 'Smith', '1985-10-13', 'SINGLE', null , 'MOBILE', '+32488372918', true);

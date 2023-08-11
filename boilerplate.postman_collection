@@ -55,7 +55,7 @@
 			"response": []
 		},
 		{
-			"name": "getAll",
+			"name": "getAll - first page - default page",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -68,6 +68,110 @@
 					"port": "8080",
 					"path": [
 						"demands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAll - second page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/demands?page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demands"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllByCivilStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/demands?civilStatus=SINGLE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demands"
+					],
+					"query": [
+						{
+							"key": "civilStatus",
+							"value": "SINGLE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllByMaritalStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/demands?maritalStatus=LEGAL_SYSTEM",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demands"
+					],
+					"query": [
+						{
+							"key": "maritalStatus",
+							"value": "LEGAL_SYSTEM"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllByCivilStatusAndMaritalStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/demands?civilStatus=MARRIED&maritalStatus=LEGAL_SYSTEM",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demands"
+					],
+					"query": [
+						{
+							"key": "civilStatus",
+							"value": "MARRIED"
+						},
+						{
+							"key": "maritalStatus",
+							"value": "LEGAL_SYSTEM"
+						}
 					]
 				}
 			},
