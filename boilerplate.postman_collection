@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "52a4b9f0-198a-4143-a341-ac9e48303435",
+		"name": "Spring boilerplate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14010026"
+	},
+	"item": [
+		{
+			"name": "saveNewDemand",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"psp\":\"23456\",\r\n    \"smid\": \"1020304050\",\r\n    \"firstname\":\"Marcus\",\r\n    \"lastname\":\"Shire\",\r\n    \"birthdate\":\"1989-05-15\",\r\n    \"civilStatus\":\"MARRIED\",\r\n    \"maritalStatus\": \"SEPERATED_ESTATE\",\r\n    \"phoneAddress\":{\r\n        \"phoneType\":\"MOBILE\",\r\n        \"phoneNumber\":\"+32470123045\"\r\n    },\r\n    \"domiciledIncome\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/demands",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOneById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/demands/e2e77a10-8c42-4d14-a9c0-9ef08c8e1291",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demands",
+						"e2e77a10-8c42-4d14-a9c0-9ef08c8e1291"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/demands",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"demands"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
